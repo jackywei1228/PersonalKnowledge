@@ -10,13 +10,21 @@
                 &nbsp;|&nbsp;
                 <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
             <% } %>
-            <% if (theme.mermaid.enable) { %>
-            <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+            <% if (theme.mermaid.enable) { %>  <!--  修改 开始位置-->
+            <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>  <!-- 或者使用CDN -->
             <script>
-            if (window.mermaid) {
-            mermaid.initialize({theme: 'forest'});
-            }
-            </script>
+              $(document).ready(function() {
+                var mermaid_config = {
+                    startOnLoad: true,
+                    theme: '<%- theme.mermaid.theme %>',
+                    flowchart:{
+                        useMaxWidth: false,
+                        htmlLabels: true
+                    }
+                }
+                mermaid.initialize(mermaid_config);
+              });
+            </script>   <!-- 修改 结束位置 --> 
             <% } %>
         </div>
     </div>
