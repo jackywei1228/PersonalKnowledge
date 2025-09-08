@@ -109,3 +109,4 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   version: "7.1.2" # default v7.1.2
   options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
     #startOnload: true  // default true
+  theme: default
